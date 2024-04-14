@@ -8,6 +8,12 @@ namespace REST_API.Controllers;
 [ApiController]
 public class AppointmentsController : ControllerBase
 {
+    [HttpGet]
+    public IActionResult GetAppointments()
+    {
+        return Ok(Appointments._appointments);
+    }
+    
     [HttpGet("{id:int}")]
     public IActionResult GetAppointmentsForId(int id)
     {
@@ -18,5 +24,12 @@ public class AppointmentsController : ControllerBase
         }
 
         return Ok(appointments);
+    }
+    
+    [HttpPost]
+    public IActionResult CreateAppointment(Appointment appointment)
+    {
+        Appointments._appointments.Add(appointment);
+        return StatusCode(StatusCodes.Status201Created);
     }
 }
