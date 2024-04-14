@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace REST_API.Models;
 
 public class Animal
@@ -16,5 +18,11 @@ public class Animal
         Category = category;
         Weight = weight;
         Color = color;
+    }
+
+    public void Update(Animal animal)
+    {
+        Name = animal.Name;
+        Weight = animal.Weight;
     }
 }
