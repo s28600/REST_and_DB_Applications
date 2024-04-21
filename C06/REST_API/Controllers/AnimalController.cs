@@ -22,4 +22,11 @@ public class AnimalController(IAnimalsRepository animalsRepository) : Controller
         var affectedCount = _animalsRepository.CreateAnimal(animal);
         return StatusCode(StatusCodes.Status201Created);
     }
+
+    [HttpPut("{id:int}")]
+    public IActionResult UpdateAnimal(int id, Animal animal)
+    {
+        var affectedCount = _animalsRepository.UpdateAnimal(animal);
+        return StatusCode(StatusCodes.Status204NoContent);
+    }
 }

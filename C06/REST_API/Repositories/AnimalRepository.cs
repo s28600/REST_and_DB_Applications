@@ -41,7 +41,7 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
         sqlCommand.Parameters.AddWithValue("@Name", animal.Name);
         sqlCommand.Parameters.AddWithValue("@Description", animal.Description);
         sqlCommand.Parameters.AddWithValue("@Category", animal.Category);
-        sqlCommand.Parameters.AddWithValue("@Area", animal.Name);
+        sqlCommand.Parameters.AddWithValue("@Area", animal.Area);
         
         sqlConnection.Open();
         return sqlCommand.ExecuteNonQuery();
@@ -49,7 +49,19 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
 
     public int UpdateAnimal(Animal animal)
     {
-        throw new NotImplementedException();
+        using var sqlConnection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        using var sqlCommand = new SqlCommand();
+        sqlCommand.Connection = sqlConnection;
+        sqlCommand.CommandText = "UPDATE Animal SET Name=@Name, Description=@Description, Category=@Category, Area=@Area WHERE IdAnimal = @IdAnimal";
+        sqlCommand.Parameters.AddWithValue("@IdAnimal", animal.IdAnimal);
+        sqlCommand.Parameters.AddWithValue("@Name", animal.Name);
+        sqlCommand.Parameters.AddWithValue("@Description", animal.Description);
+        sqlCommand.Parameters.AddWithValue("@Category", animal.Category);
+        sqlCommand.Parameters.AddWithValue("@Area", animal.Name);
+        
+        sqlConnection.Open();
+        return sqlCommand.ExecuteNonQuery();
+        
     }
 
     public int DeleteAnimal(int idAnimal)
