@@ -66,6 +66,13 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
 
     public int DeleteAnimal(int idAnimal)
     {
-        throw new NotImplementedException();
+        using var sqlConnection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        using var sqlCommand = new SqlCommand();
+        sqlCommand.Connection = sqlConnection;
+        sqlCommand.CommandText = "DELETE FROM Animal WHERE IdAnimal = @IdAnimal";
+        sqlCommand.Parameters.AddWithValue("@IdAnimal", idAnimal);
+        
+        sqlConnection.Open();
+        return sqlCommand.ExecuteNonQuery();
     }
 }

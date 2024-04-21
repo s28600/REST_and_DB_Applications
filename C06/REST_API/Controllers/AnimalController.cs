@@ -29,4 +29,11 @@ public class AnimalController(IAnimalsRepository animalsRepository) : Controller
         var affectedCount = _animalsRepository.UpdateAnimal(animal);
         return StatusCode(StatusCodes.Status204NoContent);
     }
+    
+    [HttpDelete("{id:int}")]
+    public IActionResult DeleteAnimal(int id)
+    {
+        var affectedCount = _animalsRepository.DeleteAnimal(id);
+        return StatusCode(StatusCodes.Status204NoContent);
+    }
 }
