@@ -9,13 +9,13 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
 
     public IEnumerable<Animal> GetAnimals()
     {
-        using var connection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
-        using var command = new SqlCommand();
-        command.Connection = connection;
-        command.CommandText = "SELECT * FROM Animal ORDER BY Name ASC";
+        using var sqlConnection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        using var sqlCommand = new SqlCommand();
+        sqlCommand.Connection = sqlConnection;
+        sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY Name ASC";
         
-        connection.Open();
-        var dataReader = command.ExecuteReader();
+        sqlConnection.Open();
+        var dataReader = sqlCommand.ExecuteReader();
         var animals = new List<Animal>();
         while (dataReader.Read())
         {
@@ -28,13 +28,23 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
                 );
             animals.Add(animal);
         }
-
+        
         return animals;
     }
 
     public int CreateAnimal(Animal animal)
     {
-        throw new NotImplementedException();
+        using var sqlConnection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        using var sqlCommand = new SqlCommand();
+        sqlCommand.Connection = sqlConnection;
+        sqlCommand.CommandText = "INSERT INTO Animal (Name, Description, Category, Area) VALUES (@Name, @Description, @Category, @Area)";
+        sqlCommand.Parameters.AddWithValue("@Name", animal.Name);
+        sqlCommand.Parameters.AddWithValue("@Description", animal.Description);
+        sqlCommand.Parameters.AddWithValue("@Category", animal.Category);
+        sqlCommand.Parameters.AddWithValue("@Area", animal.Name);
+        
+        sqlConnection.Open();
+        return sqlCommand.ExecuteNonQuery();
     }
 
     public int UpdateAnimal(Animal animal)

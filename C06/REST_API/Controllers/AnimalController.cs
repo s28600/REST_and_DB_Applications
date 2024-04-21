@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using REST_API.Models;
 using REST_API.Repositories;
 
 namespace REST_API.Controllers;
@@ -13,5 +14,12 @@ public class AnimalController(IAnimalsRepository animalsRepository) : Controller
     public IActionResult GetAnimals()
     {
         return Ok(_animalsRepository.GetAnimals());
+    }
+
+    [HttpPost]
+    public IActionResult CreateAnimal(Animal animal)
+    {
+        var affectedCount = _animalsRepository.CreateAnimal(animal);
+        return StatusCode(StatusCodes.Status201Created);
     }
 }
