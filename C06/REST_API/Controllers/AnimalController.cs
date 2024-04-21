@@ -11,7 +11,7 @@ public class AnimalController(IAnimalsRepository animalsRepository) : Controller
     private IAnimalsRepository _animalsRepository = animalsRepository;
 
     [HttpGet]
-    public IActionResult GetAnimals(string orderBy = "Name")
+    public IActionResult GetAnimals(string orderBy = "name")
     {
         return Ok(_animalsRepository.GetAnimals(orderBy));
     }

@@ -12,8 +12,21 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
         using var sqlConnection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
         using var sqlCommand = new SqlCommand();
         sqlCommand.Connection = sqlConnection;
-        sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY @Order ASC";
-        sqlCommand.Parameters.AddWithValue("@Order", orderBy);
+        switch (orderBy)
+        {
+            case "description":
+                sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY Description ASC";
+                break;
+            case "category":
+                sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY Category ASC";
+                break;
+            case "area":
+                sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY Area ASC";
+                break;
+            default:
+                sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY Name ASC";
+                break;
+        }
         
         sqlConnection.Open();
         var dataReader = sqlCommand.ExecuteReader();
