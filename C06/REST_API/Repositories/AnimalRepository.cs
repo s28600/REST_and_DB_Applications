@@ -7,12 +7,13 @@ public class AnimalRepository(IConfiguration configuration) : IAnimalsRepository
 {
     private IConfiguration _configuration = configuration;
 
-    public IEnumerable<Animal> GetAnimals()
+    public IEnumerable<Animal> GetAnimals(string orderBy)
     {
         using var sqlConnection = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
         using var sqlCommand = new SqlCommand();
         sqlCommand.Connection = sqlConnection;
-        sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY Name ASC";
+        sqlCommand.CommandText = "SELECT * FROM Animal ORDER BY @Order ASC";
+        sqlCommand.Parameters.AddWithValue("@Order", orderBy);
         
         sqlConnection.Open();
         var dataReader = sqlCommand.ExecuteReader();
