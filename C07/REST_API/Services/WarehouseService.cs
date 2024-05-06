@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using REST_API.Models;
@@ -6,7 +7,7 @@ namespace REST_API.Services;
 
 public class WarehouseService(IConfiguration configuration) : IWarehouseService
 {
-    public void UpdateWarehouse(Warehouse warehouse)
+    public int UpdateWarehouse(Warehouse warehouse)
     {
         using var sqlConnection = new SqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
         sqlConnection.Open();
@@ -18,31 +19,31 @@ public class WarehouseService(IConfiguration configuration) : IWarehouseService
             throw new Exception("Amount should be greater than 0");
         if (!OrderExists(sqlConnection, warehouse.IdProduct, warehouse.Amount, warehouse.CreatedAt))
             throw new Exception("Order does not exist");
-        if (!OrderCompleted(sqlConnection, warehouse.IdProduct, warehouse.Amount))
+        if (OrderCompleted(sqlConnection, warehouse.IdProduct, warehouse.Amount))
             throw new Exception("Order is already completed");
 
         int idOrder = GetIdOrder(sqlConnection, warehouse.IdProduct, warehouse.Amount);
-        FulfillOrder(sqlConnection, warehouse, idOrder);
-        
+        return FulfillOrder(sqlConnection, warehouse, idOrder);
     }
 
-    private void FulfillOrder(SqlConnection sqlConnection, Warehouse warehouse, int idOrder)
+    private int FulfillOrder(SqlConnection sqlConnection, Warehouse warehouse, int idOrder)
     {
-        using var command = new SqlCommand("UPDATE [Order] Set FulfilledAt = GETDATE() WHERE IdOrder = @Id", sqlConnection);
-        command.Parameters.AddWithValue("@Id", idOrder);
+        using var command = new SqlCommand("UPDATE [Order] Set FulfilledAt = GETDATE() WHERE IdOrder = @IdOrder", sqlConnection);
+        command.Parameters.AddWithValue("@IdOrder", idOrder);
         command.ExecuteNonQuery();
         
-        command.CommandText = "SELECT Price FROM Product WHERE IdProduct = @Id";
-        command.Parameters.AddWithValue("@Id", warehouse.IdProduct);
-        double price = (double)command.ExecuteScalar();
+        command.CommandText = "SELECT Price FROM Product WHERE IdProduct = @IdProduct";
+        command.Parameters.AddWithValue("@IdProduct", warehouse.IdProduct);
+        double price = decimal.ToDouble((decimal)command.ExecuteScalar());
         
-        command.CommandText = "INSERT INTO Product_Warehouse VALUES (@IdWare, @IdProd, @IdOrder, @Amount, @Price, GETDATE())";
-        command.Parameters.AddWithValue("@IdWare", warehouse.IdWarehouse);
-        command.Parameters.AddWithValue("@IdProd", warehouse.IdProduct);
-        command.Parameters.AddWithValue("@IdOrder", idOrder);
+        command.CommandText = "INSERT INTO Product_Warehouse VALUES (@IdWarehouse, @IdProduct, @IdOrder, @Amount, @Price, GETDATE())";
+        command.Parameters.AddWithValue("@IdWarehouse", warehouse.IdWarehouse);
         command.Parameters.AddWithValue("@Amount", warehouse.Amount);
         command.Parameters.AddWithValue("@Price", warehouse.Amount * price);
         command.ExecuteNonQuery();
+        
+        command.CommandText = "SELECT IdProductWarehouse FROM Product_Warehouse WHERE IdOrder = @IdOrder";
+        return (int)command.ExecuteScalar();
     }
 
     private bool OrderCompleted(SqlConnection sqlConnection, int idProduct, int amount)
@@ -70,7 +71,7 @@ public class WarehouseService(IConfiguration configuration) : IWarehouseService
         
         command.CommandText = "SELECT CreatedAt FROM [Order] WHERE IdProduct = @Id AND Amount = @Amount";
         DateTime createdAt = (DateTime)command.ExecuteScalar();
-        return createdAt.CompareTo(dateTime) > 0;
+        return createdAt.CompareTo(dateTime) < 0;
     }
     
     private bool ProductExists(SqlConnection sqlConnection, int id)
