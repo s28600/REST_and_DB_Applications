@@ -11,6 +11,6 @@ public class WarehouseController(IWarehouseService service) : ControllerBase
     [HttpPut]
     public IActionResult Edit([FromBody] Warehouse warehouse)
     {
-        return Ok(service.UpdateWarehouse(warehouse));
+        return Ok(service.InsertIntoProductWarehouse(warehouse));
     }
 }

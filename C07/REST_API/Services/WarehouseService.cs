@@ -7,7 +7,7 @@ namespace REST_API.Services;
 
 public class WarehouseService(IConfiguration configuration) : IWarehouseService
 {
-    public int UpdateWarehouse(Warehouse warehouse)
+    public int InsertIntoProductWarehouse(Warehouse warehouse)
     {
         using var sqlConnection = new SqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
         sqlConnection.Open();
