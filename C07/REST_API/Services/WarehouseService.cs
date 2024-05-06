@@ -7,6 +7,23 @@ namespace REST_API.Services;
 
 public class WarehouseService(IConfiguration configuration) : IWarehouseService
 {
+    public int InsertStored(Warehouse warehouse)
+    {
+        using var sqlConnection = new SqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
+        using var command = new SqlCommand("EXEC AddProductToWarehouse @IdProduct, @IdWarehouse, @Amount, @CreatedAt", sqlConnection);
+        command.Parameters.AddWithValue("@IdProduct", warehouse.IdProduct);
+        command.Parameters.AddWithValue("@IdWarehouse", warehouse.IdWarehouse);
+        command.Parameters.AddWithValue("@Amount", warehouse.Amount);
+        command.Parameters.AddWithValue("@CreatedAt", warehouse.CreatedAt);
+        sqlConnection.Open();
+        command.ExecuteNonQuery();
+
+        int idOrder = GetIdOrder(sqlConnection, warehouse.IdProduct, warehouse.Amount);
+        command.CommandText = "SELECT IdProductWarehouse FROM Product_Warehouse WHERE IdOrder = @IdOrder";
+        command.Parameters.AddWithValue("@IdOrder", idOrder);
+        return (int)command.ExecuteScalar();
+    }
+    
     public int InsertIntoProductWarehouse(Warehouse warehouse)
     {
         using var sqlConnection = new SqlConnection(configuration["ConnectionStrings:DefaultConnection"]);

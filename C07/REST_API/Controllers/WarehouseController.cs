@@ -9,8 +9,14 @@ namespace REST_API.Controllers;
 public class WarehouseController(IWarehouseService service) : ControllerBase
 {
     [HttpPut]
-    public IActionResult Edit([FromBody] Warehouse warehouse)
+    public IActionResult InsertIntoProductWarehouse([FromBody] Warehouse warehouse)
     {
         return Ok(service.InsertIntoProductWarehouse(warehouse));
+    }
+
+    [HttpPut("/stored")]
+    public IActionResult InsertStored([FromBody] Warehouse warehouse)
+    {
+        return Ok(service.InsertStored(warehouse));
     }
 }
