@@ -4,6 +4,7 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>false</InvariantGlobalization>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,7 +22,7 @@
     <ItemGroup>
       <Folder Include="Context\" />
       <Folder Include="Controllers\" />
-      <Folder Include="Models\" />
+      <Folder Include="Services\" />
     </ItemGroup>
 
 </Project>
