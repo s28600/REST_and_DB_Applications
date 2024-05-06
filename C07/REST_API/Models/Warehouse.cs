@@ -7,5 +7,4 @@ public class Warehouse {
     public int IdWarehouse { get; set; }
     public int Amount { get; set; }
     public SqlDateTime CreatedAt { get; set; }
-    
 }
