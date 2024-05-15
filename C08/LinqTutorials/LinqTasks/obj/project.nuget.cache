@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+HlZrLvuxUy1QYTRWtivfc7KqsLbn1VZrEMQx6CLfm3JJJ3Udu20exFGMNlWQtqtIcGZx+MB8wtvIo+3UxcAiA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\illya\\RiderProjects\\APBD\\C08\\LinqTutorials\\LinqTasks\\LinqTasks.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\illya\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.19\\microsoft.netcore.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\illya\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.19\\microsoft.windowsdesktop.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\illya\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.19\\microsoft.aspnetcore.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\illya\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.19\\microsoft.netcore.app.host.win-x64.7.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}
