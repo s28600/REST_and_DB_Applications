@@ -11,8 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e46a0d2-980d-447b-b4aa-e550d599ac9b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.C06/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.C06/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C07/REST_API/Controllers/WarehouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C07/REST_API/Controllers/WarehouseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C07/REST_API/Services/WarehouseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C07/REST_API/Services/WarehouseService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +108,7 @@
       <updated>1714994195228</updated>
       <workItem from="1714994196276" duration="627000" />
       <workItem from="1715000368353" duration="619000" />
+      <workItem from="1715554036960" duration="68000" />
     </task>
     <servers />
   </component>
