@@ -65,7 +65,13 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<object> Task5()
     {
-        return null;
+        var result = Emps.Select(emp => new
+        {
+            Nazwisko = emp.Ename,
+            Praca = emp.Job
+        });
+            
+        return result;
     }
 
     /// <summary>
