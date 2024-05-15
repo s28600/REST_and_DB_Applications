@@ -19,7 +19,11 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<Emp> Task1()
     {
-        return null;
+        var result = from emp in Emps 
+            where emp.Job == "Backend programmer" 
+            select emp;
+
+        return result;
     }
 
     /// <summary>
@@ -27,7 +31,12 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<Emp> Task2()
     {
-        return null;
+        var result = from emp in Emps 
+            where emp.Job == "Frontend programmer" && emp.Salary > 1000 
+            orderby emp.Ename descending 
+            select emp;
+        
+        return result;
     }
 
 
@@ -36,7 +45,9 @@ public static partial class Tasks
     /// </summary>
     public static int Task3()
     {
-        return -1;
+        var result = Emps.Max(emp => emp.Salary);
+        
+        return result;
     }
 
     /// <summary>
@@ -44,7 +55,9 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<Emp> Task4()
     {
-        return null;
+        var result = Emps.Where(emp => emp.Salary == Task3());
+            
+        return result;
     }
 
     /// <summary>
