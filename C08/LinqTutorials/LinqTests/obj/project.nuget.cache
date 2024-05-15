@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "19IDZ7Jw5Ta/aZ+uG2sD0ZNCtxOD+dpHsonnupHclq3IheKFZLI8OD3Iqs2dft5TuriqkGklHecjFGMemSqHWQ==",
+  "dgSpecHash": "a9Fu9uq8AV0ukpn5x0S3nTVybYXvbiS8d6uoRQYyqcDwh7eVqguipWigOQyvn93y6dtLRULTrR1pYNPv5stDbA==",
   "success": true,
   "projectFilePath": "C:\\Users\\illya\\RiderProjects\\APBD\\C08\\LinqTutorials\\LinqTests\\LinqTests.csproj",
   "expectedPackageFiles": [
@@ -92,10 +92,7 @@
     "C:\\Users\\illya\\.nuget\\packages\\xunit.core\\2.4.2\\xunit.core.2.4.2.nupkg.sha512",
     "C:\\Users\\illya\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\illya\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
-    "C:\\Users\\illya\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512",
-    "C:\\Users\\illya\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.19\\microsoft.netcore.app.ref.7.0.19.nupkg.sha512",
-    "C:\\Users\\illya\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.19\\microsoft.windowsdesktop.app.ref.7.0.19.nupkg.sha512",
-    "C:\\Users\\illya\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.19\\microsoft.aspnetcore.app.ref.7.0.19.nupkg.sha512"
+    "C:\\Users\\illya\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
   ],
   "logs": []
 }
