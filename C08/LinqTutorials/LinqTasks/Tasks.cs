@@ -106,8 +106,10 @@ public static partial class Tasks
     ///     z elementów kolekcji pracuje jako "Backend programmer".
     /// </summary>
     public static bool Task8()
-    { 
-        return false;
+    {
+        var result = Emps.Count(emp => emp.Job == "Backend programmer") > 0;
+            
+        return result;
     }
 
     /// <summary>
@@ -116,7 +118,11 @@ public static partial class Tasks
     /// </summary>
     public static Emp Task9()
     {
-        return null;
+        var result =
+            Emps.Where(emp => emp.Job == "Frontend programmer")
+                .OrderByDescending(emp => emp.HireDate).First();
+            
+        return result;
     }
 
     /// <summary>
@@ -125,7 +131,15 @@ public static partial class Tasks
     ///     SELECT "Brak wartości", null, null;
     /// </summary>
     public static IEnumerable<object> Task10()
-    {
+    { 
+        /*var result =
+            Emps.Select(emp => new { emp.Ename, emp.Job, emp.HireDate })
+                .Concat(new[]
+                {
+                    new { Ename = "Brak wartości", Job = (string)null, Hiredate = (DateTime?)null }
+                });
+            
+        return result;*/
         return null;
     }
 
@@ -176,6 +190,12 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<Dept> Task14()
     {
-        return null;
+        var result = 
+            Depts.GroupJoin(Emps, dept => dept.Deptno, emp => emp.Deptno, 
+                    (dept, emp) => new { dept, count = emp.Count() })
+                    .Where(entry => entry.count is 5 or 0)
+                    .Select(dept => dept.dept);
+
+        return result;
     }
 }

@@ -8,11 +8,11 @@ class Program
     {
         Console.WriteLine("======= ZAD X =======");
 
-        IEnumerable<Emp> result = Tasks.Task1();
+        var result = Tasks.Task14();
 
-        foreach (Emp emp in result)
+        foreach (var res in result)
         {
-            Console.WriteLine(emp);
+            Console.WriteLine(res);
         }
     }
 }
