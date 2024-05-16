@@ -194,7 +194,8 @@ public static partial class Tasks
             Depts.GroupJoin(Emps, dept => dept.Deptno, emp => emp.Deptno, 
                     (dept, emp) => new { dept, count = emp.Count() })
                     .Where(entry => entry.count is 5 or 0)
-                    .Select(dept => dept.dept);
+                    .Select(dept => dept.dept)
+                    .OrderBy(dept => dept.Dname);
 
         return result;
     }
