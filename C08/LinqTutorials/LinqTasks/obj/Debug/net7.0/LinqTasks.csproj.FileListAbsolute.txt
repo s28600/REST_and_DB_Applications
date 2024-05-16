@@ -1,0 +1,15 @@
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\bin\Debug\net7.0\LinqTasks.exe
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\bin\Debug\net7.0\LinqTasks.deps.json
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\bin\Debug\net7.0\LinqTasks.runtimeconfig.json
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\bin\Debug\net7.0\LinqTasks.dll
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\bin\Debug\net7.0\LinqTasks.pdb
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.AssemblyInfoInputs.cache
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.AssemblyInfo.cs
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.csproj.CoreCompileInputs.cache
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.sourcelink.json
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.dll
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\refint\LinqTasks.dll
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.pdb
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\LinqTasks.genruntimeconfig.cache
+C:\Users\illya\RiderProjects\APBD\C08\LinqTutorials\LinqTasks\obj\Debug\net7.0\ref\LinqTasks.dll
