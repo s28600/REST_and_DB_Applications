@@ -81,7 +81,10 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<object> Task6()
     {
-        return null;
+        var result = Emps
+            .Join(Depts, emp => emp.Deptno, dept => dept.Deptno, (emp, dept) => new {emp.Ename, emp.Job, dept.Dname});
+        
+        return result;
     }
 
     /// <summary>
@@ -89,7 +92,13 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<object> Task7()
     {
-        return null;
+        var result = Emps.GroupBy(emp => emp.Job).Select((emp) => new
+        {
+            Praca = emp.Key,
+            LiczbaPracownikow = emp.Count()
+        });
+            
+        return result;
     }
 
     /// <summary>
