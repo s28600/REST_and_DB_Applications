@@ -191,7 +191,12 @@ public static partial class Tasks
     /// </summary>
     public static int Task13(int[] arr)
     {
-        return -1;
+        var result =
+            arr.GroupBy(num => num)
+                .Where(num => num.Count() % 2 != 0)
+                .Select(entry => entry.Key).First();
+        
+        return result;
     }
 
     /// <summary>
