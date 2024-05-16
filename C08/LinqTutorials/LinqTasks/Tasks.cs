@@ -156,7 +156,17 @@ public static partial class Tasks
     /// </summary>
     public static IEnumerable<object> Task11()
     {
-        return null;
+        var result =
+            Depts.GroupJoin(Emps, dept => dept.Deptno, emp => emp.Deptno,
+                    (dept, emp) => new { dept, count = emp.Count() })
+                .Where(entry => entry.count > 1)
+                .Select(entry => new
+                {
+                    name = entry.dept.Dname,
+                    numOfEmployees = entry.count
+                });
+        
+        return result;
     }
 
     /// <summary>
@@ -193,9 +203,9 @@ public static partial class Tasks
         var result = 
             Depts.GroupJoin(Emps, dept => dept.Deptno, emp => emp.Deptno, 
                     (dept, emp) => new { dept, count = emp.Count() })
-                    .Where(entry => entry.count is 5 or 0)
-                    .Select(dept => dept.dept)
-                    .OrderBy(dept => dept.Dname);
+                .Where(entry => entry.count is 5 or 0)
+                .Select(entry => entry.dept)
+                .OrderBy(dept => dept.Dname);
 
         return result;
     }
