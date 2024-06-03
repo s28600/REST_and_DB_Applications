@@ -4,6 +4,7 @@ using CODE_FIRST.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CODE_FIRST.Migrations
 {
     [DbContext(typeof(ApdbContext))]
-    partial class ApdbContextModelSnapshot : ModelSnapshot
+    [Migration("20240603171658_AddedDoctorConfig")]
+    partial class AddedDoctorConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace CODE_FIRST.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Doctor", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Doctor", b =>
                 {
                     b.Property<int>("IdDoctor")
                         .ValueGeneratedOnAdd()
@@ -50,7 +53,7 @@ namespace CODE_FIRST.Migrations
                     b.ToTable("Doctor", (string)null);
                 });
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Medicament", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Medicament", b =>
                 {
                     b.Property<int>("IdMedicament")
                         .ValueGeneratedOnAdd()
@@ -75,10 +78,10 @@ namespace CODE_FIRST.Migrations
 
                     b.HasKey("IdMedicament");
 
-                    b.ToTable("Medicament", (string)null);
+                    b.ToTable("Medicaments");
                 });
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Patient", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Patient", b =>
                 {
                     b.Property<int>("IdPatient")
                         .ValueGeneratedOnAdd()
@@ -87,7 +90,6 @@ namespace CODE_FIRST.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPatient"));
 
                     b.Property<DateTime>("BirthDate")
-                        .HasMaxLength(100)
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
@@ -102,10 +104,10 @@ namespace CODE_FIRST.Migrations
 
                     b.HasKey("IdPatient");
 
-                    b.ToTable("Patient", (string)null);
+                    b.ToTable("Patients");
                 });
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Prescription", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Prescription", b =>
                 {
                     b.Property<int>("IdPrescription")
                         .ValueGeneratedOnAdd()
@@ -116,107 +118,51 @@ namespace CODE_FIRST.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DoctorIdDoctor")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PatientIdPatient")
+                    b.Property<int>("IdDoctor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPatient")
                         .HasColumnType("int");
 
                     b.HasKey("IdPrescription");
 
-                    b.HasIndex("DoctorIdDoctor");
+                    b.HasIndex("IdDoctor");
 
-                    b.HasIndex("PatientIdPatient");
+                    b.HasIndex("IdPatient");
 
-                    b.ToTable("Prescription", (string)null);
+                    b.ToTable("Prescriptions");
                 });
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Prescription_Medicament", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Prescription", b =>
                 {
-                    b.Property<int>("IdMedicament")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPrescription")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Details")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("Dose")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdMedicament", "IdPrescription");
-
-                    b.HasIndex("IdPrescription");
-
-                    b.ToTable("Prescription_Medicament", (string)null);
-                });
-
-            modelBuilder.Entity("CODE_FIRST.Entities.Prescription", b =>
-                {
-                    b.HasOne("CODE_FIRST.Entities.Doctor", "Doctor")
+                    b.HasOne("CODE_FIRST.Models.Doctor", "Doctor")
                         .WithMany("Prescriptions")
-                        .HasForeignKey("DoctorIdDoctor")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("Prescription_Doctor");
+                        .HasForeignKey("IdDoctor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("CODE_FIRST.Entities.Patient", "Patient")
+                    b.HasOne("CODE_FIRST.Models.Patient", "Patient")
                         .WithMany("Prescriptions")
-                        .HasForeignKey("PatientIdPatient")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("Prescription_Patient");
+                        .HasForeignKey("IdPatient")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Doctor");
 
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Prescription_Medicament", b =>
-                {
-                    b.HasOne("CODE_FIRST.Entities.Medicament", "Medicament")
-                        .WithMany("PrescriptionMedicaments")
-                        .HasForeignKey("IdMedicament")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("PrescriptionMedicament_Medicament");
-
-                    b.HasOne("CODE_FIRST.Entities.Prescription", "Prescription")
-                        .WithMany("PrescriptionMedicaments")
-                        .HasForeignKey("IdPrescription")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("PrescriptionMedicament_Prescription");
-
-                    b.Navigation("Medicament");
-
-                    b.Navigation("Prescription");
-                });
-
-            modelBuilder.Entity("CODE_FIRST.Entities.Doctor", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Doctor", b =>
                 {
                     b.Navigation("Prescriptions");
                 });
 
-            modelBuilder.Entity("CODE_FIRST.Entities.Medicament", b =>
-                {
-                    b.Navigation("PrescriptionMedicaments");
-                });
-
-            modelBuilder.Entity("CODE_FIRST.Entities.Patient", b =>
+            modelBuilder.Entity("CODE_FIRST.Models.Patient", b =>
                 {
                     b.Navigation("Prescriptions");
-                });
-
-            modelBuilder.Entity("CODE_FIRST.Entities.Prescription", b =>
-                {
-                    b.Navigation("PrescriptionMedicaments");
                 });
 #pragma warning restore 612, 618
         }
