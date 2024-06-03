@@ -9,16 +9,18 @@ namespace CODE_FIRST.Controllers;
 [ApiController]
 public class PrescriptionController : ControllerBase
 {
-    private IPrescriptionService _service;
+    private IPrescriptionService _prescriptionService;
     
-    public PrescriptionController(IPrescriptionService service)
+    public PrescriptionController(IPrescriptionService prescriptionService)
     {
-        _service = service;
+        _prescriptionService = prescriptionService;
     }
     
     [HttpPost]
     public IActionResult AddPrescription(PrescriptionRequest prescriptionRequest)
     {
+        if (!_prescriptionService.AddPrescription(prescriptionRequest).Result)
+            return StatusCode(400);
         return Ok();
     }
 }

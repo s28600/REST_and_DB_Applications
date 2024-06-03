@@ -1,6 +1,8 @@
+using CODE_FIRST.RequestModels;
+
 namespace CODE_FIRST.Services;
 
 public interface IPrescriptionService
 {
-    public bool AddPrescription();
+    public Task<bool> AddPrescription(PrescriptionRequest prescriptionRequest);
 }
