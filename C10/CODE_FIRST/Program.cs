@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApdbContext>(opt =>
+builder.Services.AddDbContext<MedDbContext>(opt =>
 {
     string connString = builder.Configuration.GetConnectionString("DefaultConnection");
     opt.UseSqlServer(connString);

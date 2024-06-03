@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CODE_FIRST.Context;
 
-public class ApdbContext : DbContext
+public class MedDbContext : DbContext
 {
-    public ApdbContext() {}
+    public MedDbContext() {}
 
-    public ApdbContext(DbContextOptions<ApdbContext> options) : base(options) {}
+    public MedDbContext(DbContextOptions<MedDbContext> options) : base(options) {}
 
     public DbSet<Medicament> Medicaments { get; set; }
     public DbSet<Doctor> Doctors { get; set; }
@@ -17,6 +17,6 @@ public class ApdbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApdbContext).Assembly); 
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MedDbContext).Assembly); 
     }
 }

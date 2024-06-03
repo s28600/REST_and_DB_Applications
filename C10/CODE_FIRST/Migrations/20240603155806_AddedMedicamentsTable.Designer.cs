@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CODE_FIRST.Migrations
 {
-    [DbContext(typeof(ApdbContext))]
+    [DbContext(typeof(Context.MedDbContext))]
     [Migration("20240603155806_AddedMedicamentsTable")]
     partial class AddedMedicamentsTable
     {

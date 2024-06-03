@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CODE_FIRST.Migrations
 {
-    [DbContext(typeof(ApdbContext))]
+    [DbContext(typeof(Context.MedDbContext))]
     partial class ApdbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
