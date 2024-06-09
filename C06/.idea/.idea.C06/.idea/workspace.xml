@@ -10,9 +10,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e46a0d2-980d-447b-b4aa-e550d599ac9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/.idea/.idea.Przykladowe_kolokwium_2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/.idea/.idea.Przykladowe_kolokwium_2/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/.idea/.idea.Przykladowe_kolokwium_2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Context/LabelDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Controllers/MuzycyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Album.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Configs/AlbumEfConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Configs/MuzykEfConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Configs/UtworEfConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Configs/WykonawcaUtworuEtConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Configs/WytworniaEfConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Muzyk.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Utwor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/WykonawcaUtworu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Entities/Wytwornia.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Models/MuzykResponseModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Models/ResponseModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Services/IMuzykService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Przykladowe_kolokwium_2/Przykladowe_kolokwium_2/Services/MuzykService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.C06/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.C06/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/REST_API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/REST_API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REST_API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C07/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C07/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C07/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../C07/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTasks/obj/Debug/net8.0/LinqTasks.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTasks/obj/Debug/net8.0/LinqTasks.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTasks/obj/Debug/net8.0/LinqTasks.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTasks/obj/Debug/net8.0/LinqTasks.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTests/obj/Debug/net8.0/LinqTests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTests/obj/Debug/net8.0/LinqTests.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTests/obj/Debug/net8.0/LinqTests.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../C08/LinqTutorials/LinqTests/obj/Debug/net8.0/LinqTests.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/bin/Debug/net8.0/CODE_FIRST.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/bin/Debug/net8.0/CODE_FIRST.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/bin/Debug/net8.0/CODE_FIRST.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/bin/Debug/net8.0/CODE_FIRST.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/bin/Debug/net8.0/CODE_FIRST.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/bin/Debug/net8.0/CODE_FIRST.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/CODE_FIRST.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/ref/CODE_FIRST.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/ref/CODE_FIRST.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/refint/CODE_FIRST.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/Debug/net8.0/refint/CODE_FIRST.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/../C10/CODE_FIRST/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +151,7 @@
       <workItem from="1714994196276" duration="627000" />
       <workItem from="1715000368353" duration="619000" />
       <workItem from="1715554036960" duration="68000" />
+      <workItem from="1717965778454" duration="622000" />
     </task>
     <servers />
   </component>
